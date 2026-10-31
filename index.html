@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto 16 - Desplegable Personalizado</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>¿Qué deseas jugar hoy?</h2>
+
+        <!-- Aquí armamos la estructura del desplegable -->
+        <div class="desplegable" id="miDesplegable">
+            
+            <!-- Lo que se ve a primera vista (el botón o cajita) -->
+            <div class="caja-principal" id="cajaPrincipal">
+                <span id="textoOpcion">Selecciona el juego que te guste</span>
+                <span class="flecha" id="iconoFlecha">v</span>
+            </div>
+            <!-- Las opciones que están escondidas hasta que uno les da clic -->
+            <ul class="lista-opciones" id="listaOpciones">
+                <li class="opcion">FIFA 27</li>
+                <li class="opcion">Call of Duty</li>
+                <li class="opcion">Gear Of War</li>
+                <li class="opcion">The Witcher 3</li>
+                <li class="opcion">Red Dead Redemption 2</li>
+            </ul>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

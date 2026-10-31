@@ -1,0 +1,99 @@
+/* Limpiamos márgenes y configuramos la fuente de una vez */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.contenedor {
+    text-align: center;
+    background-color: #14f603;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color:  #f0eeee;
+}
+
+/* El cuadro que encierra todo nuestro componente */
+.desplegable {
+    position: relative;
+    width: 280px;
+    text-align: left;
+    user-select: none;
+}
+
+/* Diseñando la barra que el usuario ve y presiona */
+.caja-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.2s ease;
+}
+
+.caja-principal:hover {
+    border-color: #888;
+}
+
+/* La cajita flotante con las opciones */
+.lista-opciones {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    list-style: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    display: none; /* Lo ocultamos por defecto con esto */
+    z-index: 10;
+}
+
+/* Cada opción de la lista */
+.opcion {
+    padding: 12px 16px;
+    cursor: pointer;
+    font-size: 15px;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.opcion:last-child {
+    border-bottom: none;
+}
+
+.opcion:hover {
+    background-color: #f0f2f5;
+}
+
+/* Aquí le ponemos el chulito a la opción que elijamos */
+.opcion.seleccionada::after {
+    content: "✔";
+    font-size: 14px;
+    color: #000;
+}
+
+/* Clase que inyectamos con JS para que aparezca la lista */
+.desplegable.activo .lista-opciones {
+    display: block;
+}
